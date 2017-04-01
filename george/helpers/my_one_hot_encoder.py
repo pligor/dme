@@ -14,6 +14,10 @@ class MyOneHotEncoder(object):
         assert len(arr.shape) > 1
         return pd.DataFrame(arr, columns=[col_name + "_{}".format(col_ind) for col_ind in range(arr.shape[1])])
 
+    def encodePandasColAndMerge(self, data_frame, col_name):
+        one_hot_encoded = MyOneHotEncoder().encodePandasColumn(data_frame=data_frame, col_name=col_name)
+        return pd.concat((data_frame, one_hot_encoded), axis=1).drop(labels=[col_name], axis=1)
+
     def encodePandasColumn(self, data_frame, col_name):
         # df = data_frame[:]
         dataf = data_frame.copy()
