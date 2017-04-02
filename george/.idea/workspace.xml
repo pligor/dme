@@ -34,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_one_hot_encoder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my_one_hot_encoder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/my_one_hot_encoder.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -42,6 +42,26 @@
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="py_helpers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/helpers/py_helpers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="outliers.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/helpers/outliers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,6 +80,8 @@
       <list>
         <option value="$PROJECT_DIR$/helpers/feature_engineering.py" />
         <option value="$PROJECT_DIR$/helpers/my_one_hot_encoder.py" />
+        <option value="$PROJECT_DIR$/helpers/py_helpers.py" />
+        <option value="$PROJECT_DIR$/helpers/outliers.py" />
       </list>
     </option>
   </component>
@@ -451,6 +473,22 @@
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/py_helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/outliers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
