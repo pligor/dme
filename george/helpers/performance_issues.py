@@ -7,7 +7,7 @@ import numpy as np
 
 
 def subsample_keeping_class_proportions(XX, yy, nn, seed=None):
-    """currently works only with binary class targets"""
+    """returns tuple of Xsub and y_sub. Currently works only with binary class targets"""
     assert nn % 2. == 0, "we need half and half"
     half_nn = nn // 2
 
