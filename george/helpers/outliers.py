@@ -4,6 +4,14 @@ import numpy as np
 class MyOutliers(object):
     default_k = 1.5
 
+    def removeOutliers(self, data, bounds):
+        """returns the data with the removed outliers and the indices that survived"""
+
+        fatalRowInds = self.getOutlierDataPoints(data, bounds)
+        survivors = np.delete(range(len(data)), list(fatalRowInds))
+        assert len(data) == (len(survivors) + len(fatalRowInds))
+        return data.iloc[survivors], survivors
+
     @staticmethod
     def countOutliersDataPoints(data, bounds):
         """bounds are a series of boundaries and data is a dataset matrix"""
