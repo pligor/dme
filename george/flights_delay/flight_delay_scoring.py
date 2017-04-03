@@ -9,9 +9,11 @@ def getScore_onKFold_callback(cls):
         cls.fit(X_train, y_train)
         preds = cls.predict(X_valid)
         proba_preds = cls.predict_proba(X_valid)
-        log_loss_df = pd.DataFrame(data=np.array([[log_loss(y_true=y_valid, y_pred=proba_preds)]]),
-                                   columns=["log_loss"])
-        return pd.concat((getFlightDelayScores(y_true=y_valid, y_pred=preds), log_loss_df), axis=1)
+        extra_metrics = pd.DataFrame(data=np.array([[
+            log_loss(y_true=y_valid, y_pred=proba_preds),
+            cls.score(X_valid, y_valid),
+        ]]), columns=["log_loss", "accuracy_score"])
+        return pd.concat((getFlightDelayScores(y_true=y_valid, y_pred=preds), extra_metrics), axis=1)
 
     return score_onKFold
 

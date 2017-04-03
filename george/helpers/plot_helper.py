@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np
 
-def scatter_2d_label(X_2d, y, s=2, alpha=0.5, lw=2):
+def scatter_2d_label(X_2d, y, s=2, alpha=0.5, lw=2, ax=plt):
     """Visualuse a 2D embedding with corresponding labels.
 
     X_2d : ndarray, shape (n_samples,2)
@@ -23,4 +23,4 @@ def scatter_2d_label(X_2d, y, s=2, alpha=0.5, lw=2):
     targets = np.unique(y)
     colors = sns.color_palette(n_colors=targets.size)
     for color, target in zip(colors, targets):
-        plt.scatter(X_2d[y == target, 0], X_2d[y == target, 1], color=color, label=target, s=s, alpha=alpha, lw=lw)
+        ax.scatter(X_2d[y == target, 0], X_2d[y == target, 1], color=color, label=target, s=s, alpha=alpha, lw=lw)
