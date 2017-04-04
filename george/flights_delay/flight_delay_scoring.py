@@ -2,6 +2,22 @@ from sklearn.metrics import f1_score, precision_score
 import pandas as pd
 import numpy as np
 from sklearn.metrics import log_loss
+from dataset import getRbfKernelPCADimReducedDataset
+from helpers.my_cross_validation import MyCrossValidation
+from helpers.plot_helper import renderPointsWithDecisionBounds
+from matplotlib import pyplot as plt
+
+
+def scoreWithDimReduction(clf, target_col, n_components=2, random_state=None):
+    XX_lowdim, yy = getRbfKernelPCADimReducedDataset(n_components=n_components, target_col=target_col)
+    cv = MyCrossValidation(n_folds=5, random_state=random_state)
+    scores = cv.onEachKFold(XX_lowdim, yy, getScore_onKFold_callback(clf))
+
+    if n_components == 2:
+        renderPointsWithDecisionBounds(XXX=XX_lowdim.values, yyy=yy.values, score=scores['accuracy_score'], clf=clf)
+        plt.show()
+
+    return scores
 
 
 def getScore_onKFold_callback(cls):

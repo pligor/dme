@@ -4,6 +4,30 @@ import pandas as pd
 from sklearn.utils import shuffle
 from sklearn.model_selection import StratifiedKFold
 import numpy as np
+from sklearn.decomposition import KernelPCA
+import os
+
+
+def rbfPCAkernel(XX, yy, target_column_name, n_splits=10, n_components=2, n_jobs=1, random_state=None,
+                 gamma=0.1, saving=False):
+    assert n_components >= 2
+
+    def processor(inputs):
+        return KernelPCA(n_components=n_components, random_state=random_state, kernel='rbf', gamma=gamma,
+                         n_jobs=n_jobs).fit_transform(inputs)
+
+    df_lowdim = processSeparately(inputs=XX, targets=yy, processor=processor, n_components=n_components,
+                                  n_splits=n_splits)
+
+    XX_lowdim = df_lowdim.drop(labels=[target_column_name], axis=1)
+    yy_lowdim = df_lowdim[target_column_name]
+
+    if saving:
+        pd.concat((XX_lowdim, yy_lowdim), axis=1).to_csv(
+            os.path.realpath(os.path.join(os.getcwd(), '../Data', 'rbf_pca_kernel_%d_components.csv' % n_components)),
+            index=False)
+
+    return XX_lowdim, yy_lowdim
 
 
 def subsample_keeping_class_proportions(XX, yy, nn, seed=None):
