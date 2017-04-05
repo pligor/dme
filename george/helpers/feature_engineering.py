@@ -1,5 +1,23 @@
 from datetime import datetime
 import numpy as np
+from sklearn.utils import shuffle
+import pandas as pd
+
+
+def makeBinaryClassification(df, condition_arr, random_state=None):
+    class_a = df[condition_arr == True]
+    class_b = df[condition_arr == False]
+
+    if len(class_a) == len(class_b):
+        return df
+    else:
+        class_to_reduce = class_a if len(class_a) > len(class_b) else class_b
+        class_to_keep = class_a if len(class_a) < len(class_b) else class_b
+
+        class_reduced = shuffle(class_to_reduce, random_state=random_state, n_samples=len(class_to_keep))
+        assert len(class_reduced) == len(class_to_keep)
+
+        return shuffle(pd.concat( (class_reduced, class_to_keep) ), random_state=random_state)
 
 
 def getUniqueValuesPerFeature(df, threshold=150):

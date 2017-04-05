@@ -21,7 +21,7 @@ class FlightDelayFeatureProcessing(object):
         df = self.removeDepDelayNew(df)
         df = self.removeDepDel15(df)
         df = self.oneHotEncodingDepartureTimeBlock(df)
-        #df = self.eraseCancelledFlights(df)
+        # df = self.eraseCancelledFlights(df)
         df = self.removeCancelledAndFlights(df)
         df = self.removeElapsedTime(df)
         return self.removeArrivalAttrs(df)
@@ -53,6 +53,22 @@ class FlightDelayFeatureProcessing(object):
                 null_inds |= set(inds)
 
         return null_inds
+
+    @staticmethod
+    def removeArrDelayGroup(df):
+        return df.drop(labels=['ARR_DELAY_GROUP'], axis=1)
+
+    @staticmethod
+    def removeArrivalAttrsExceptArrDelayGroup(df):
+        return df.drop(labels=[
+            'CRS_ARR_TIME', 'ARR_TIME', 'ARR_DELAY', 'ARR_DELAY_NEW', 'ARR_DEL15'
+        ], axis=1)
+
+    @staticmethod
+    def removeArrivalAttrsExceptArrDelay(df):
+        return df.drop(labels=[
+            'CRS_ARR_TIME', 'ARR_TIME', 'ARR_DELAY_NEW', 'ARR_DEL15', 'ARR_DELAY_GROUP'
+        ], axis=1)
 
     @staticmethod
     def removeArrivalAttrs(df):
