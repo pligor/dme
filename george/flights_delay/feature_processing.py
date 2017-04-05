@@ -21,10 +21,79 @@ class FlightDelayFeatureProcessing(object):
         df = self.removeDepDelayNew(df)
         df = self.removeDepDel15(df)
         df = self.oneHotEncodingDepartureTimeBlock(df)
-        # df = self.eraseCancelledFlights(df)
         df = self.removeCancelledAndFlights(df)
         df = self.removeElapsedTime(df)
         return self.removeArrivalAttrs(df)
+
+    @staticmethod
+    def binarizeDayOfWeek(df):
+        """Thursday and Friday have more delays"""
+        daysWithMoreDelays = [4, 5]  #Thursday and Friday
+
+        attr = 'DAY_OF_WEEK'
+
+        origCol = df[attr]
+
+        col = origCol.copy()
+        condition = np.in1d(origCol, daysWithMoreDelays)
+
+        col[condition] = 1
+        col[np.logical_not(condition)] = 0
+
+        data_frame = df.copy()
+        data_frame[attr] = col
+
+        return data_frame
+
+    @staticmethod
+    def binarizeDayOfMonth(df):
+        """for some weird reason these days of the month have more delays"""
+        daysWithMoreDelays = [14, 15, 16, 17, 18]
+
+        attr = 'DAY_OF_MONTH'
+
+        origCol = df[attr]
+
+        col = origCol.copy()
+        condition = np.in1d(origCol, daysWithMoreDelays)
+
+        col[condition] = 1
+        col[np.logical_not(condition)] = 0
+
+        data_frame = df.copy()
+        data_frame[attr] = col
+
+        return data_frame
+
+    @staticmethod
+    def binarizeMonth(df):
+        """summer months have more delayed flights in comparison to arrived on time ones"""
+
+        summerMonths = [6, 7, 8]
+
+        origCol = df['MONTH']
+        col = origCol.copy()
+        condition = np.in1d(origCol, summerMonths)
+
+        col[condition] = 1
+        col[np.logical_not(condition)] = 0
+
+        data_frame = df.copy()
+        data_frame['MONTH'] = col
+
+        return data_frame
+
+    @staticmethod
+    def binarizeQuarter(df):
+        """quarter 3 has more delays"""
+        quarter = 3
+        origCol = df['QUARTER']
+        col = df['QUARTER'].copy()
+        col[origCol == quarter] = 1
+        col[origCol != quarter] = 0
+        data_frame = df.copy()
+        data_frame['QUARTER'] = col
+        return data_frame
 
     @staticmethod
     def eraseRowsWithNulls(df):
@@ -75,6 +144,10 @@ class FlightDelayFeatureProcessing(object):
         return df.drop(labels=[
             'CRS_ARR_TIME', 'ARR_TIME', 'ARR_DELAY', 'ARR_DELAY_NEW', 'ARR_DEL15', 'ARR_DELAY_GROUP'
         ], axis=1)
+
+    @staticmethod
+    def dropActualElapsedTime(df):
+        return df.drop(labels=['ACTUAL_ELAPSED_TIME'], axis=1)
 
     @staticmethod
     def removeElapsedTime(df):
@@ -155,6 +228,10 @@ class FlightDelayFeatureProcessing(object):
     @staticmethod
     def dropYearAndDate(df):
         return df.drop(labels=['YEAR', 'FL_DATE'], axis=1)
+
+    @staticmethod
+    def dropFlightNumber(df):
+        return df.drop(labels=['FL_NUM'], axis=1)
 
     @staticmethod
     def createYday(df):

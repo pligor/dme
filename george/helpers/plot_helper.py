@@ -3,6 +3,38 @@ import seaborn as sns
 import numpy as np
 
 
+def plotBothDists(XX, yy, colname, bins=None, alpha=0.3):
+    fig, ax = plt.subplots(figsize=(16, 5))
+    # sns.despine(left=True)
+    # plt.hold(True)
+
+    ax.hold(True)
+    sns.distplot(XX[yy][colname], kde=True, bins=bins,  # ax=ax,
+                 color="r", hist_kws={"color": "r", "alpha": alpha}, kde_kws={"color": "r", "alpha": 1.})
+    ax.hold(True)
+    sns.distplot(XX[yy == False][colname], bins=bins, kde=True,  # ax=ax,
+                 hist_kws={"alpha": alpha}, kde_kws={"color": "b", "alpha": 1.}, color="b"
+                 )
+
+    ax.hold(False)
+    plt.show()
+
+
+
+
+def plotDistsPerClass(XX, yy, colname, true_title='delayed!', false_title='arrived on time', bins=None):
+    fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(16, 5))
+
+    sns.distplot(XX[yy][colname], ax=ax[1], kde=True, color="r", bins=bins)
+    ax[1].set_title(true_title)
+
+    sns.distplot(XX[yy == False][colname], ax=ax[0], kde=True, color="b", bins=bins)
+    ax[0].set_title(false_title)
+
+    # fig.tight_layout()
+    plt.show()
+
+
 def renderPointsWithDecisionBounds(XXX, yyy, score, clf,
                                    h=.02,  # step size in the mesh
                                    cm=plt.cm.RdBu,
