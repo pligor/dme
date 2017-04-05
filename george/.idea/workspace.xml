@@ -24,8 +24,8 @@
       <file leaf-file-name="feature_engineering.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/feature_engineering.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
+            <state relative-caret-position="68">
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="29" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -58,7 +58,7 @@
       <file leaf-file-name="outliers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/outliers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="-1019">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
@@ -96,12 +96,14 @@
               <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
+                <marker date="1491223037405" expanded="true" signature="115:1016" ph="..." />
+                <marker date="1491223037405" expanded="true" signature="379:1016" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="performance_issues.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="performance_issues.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/performance_issues.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -125,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feature_processing.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="feature_processing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flights_delay/feature_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1717">
-              <caret line="104" column="59" selection-start-line="104" selection-start-column="59" selection-end-line="104" selection-end-column="59" />
+            <state relative-caret-position="17">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -149,16 +151,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/helpers/feature_engineering.py" />
         <option value="$PROJECT_DIR$/helpers/my_one_hot_encoder.py" />
         <option value="$PROJECT_DIR$/helpers/py_helpers.py" />
-        <option value="$PROJECT_DIR$/flights_delay/feature_processing.py" />
         <option value="$PROJECT_DIR$/helpers/outliers.py" />
         <option value="$PROJECT_DIR$/helpers/plot_helper.py" />
         <option value="$PROJECT_DIR$/flights_delay/dataset.py" />
         <option value="$PROJECT_DIR$/helpers/my_cross_validation.py" />
         <option value="$PROJECT_DIR$/helpers/performance_issues.py" />
         <option value="$PROJECT_DIR$/flights_delay/flight_delay_scoring.py" />
+        <option value="$PROJECT_DIR$/flights_delay/feature_processing.py" />
+        <option value="$PROJECT_DIR$/helpers/feature_engineering.py" />
       </list>
     </option>
   </component>
@@ -169,8 +171,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="75" />
-    <option name="y" value="82" />
+    <option name="x" value="65" />
+    <option name="y" value="101" />
     <option name="width" value="1525" />
     <option name="height" value="818" />
   </component>
@@ -486,7 +488,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="82" width="1525" height="818" extended-state="0" />
+    <frame x="65" y="101" width="1525" height="818" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22885247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -534,6 +536,8 @@
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1491223037405" expanded="true" signature="115:1016" ph="..." />
+            <marker date="1491223037405" expanded="true" signature="379:1016" ph="..." />
           </folding>
         </state>
       </provider>
@@ -620,6 +624,8 @@
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1491223037405" expanded="true" signature="115:1016" ph="..." />
+            <marker date="1491223037405" expanded="true" signature="379:1016" ph="..." />
           </folding>
         </state>
       </provider>
@@ -706,6 +712,8 @@
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1491223037405" expanded="true" signature="115:1016" ph="..." />
+            <marker date="1491223037405" expanded="true" signature="379:1016" ph="..." />
           </folding>
         </state>
       </provider>
@@ -782,6 +790,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1491223037405" expanded="true" signature="115:1016" ph="..." />
+            <marker date="1491223037405" expanded="true" signature="379:1016" ph="..." />
           </folding>
         </state>
       </provider>
@@ -930,24 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/outliers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/feature_engineering.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/plot_helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -958,22 +950,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flights_delay/feature_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="104" column="59" selection-start-line="104" selection-start-column="59" selection-end-line="104" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/my_cross_validation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+            <marker date="1491223037405" expanded="true" signature="115:1016" ph="..." />
+            <marker date="1491223037405" expanded="true" signature="379:1016" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1004,6 +988,34 @@
           <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/feature_engineering.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/outliers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1019">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flights_delay/feature_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>

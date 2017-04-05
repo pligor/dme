@@ -2,6 +2,7 @@ from sklearn.utils import shuffle
 import pandas as pd
 from helpers.feature_engineering import dateStrToDayYear
 from helpers.my_one_hot_encoder import MyOneHotEncoder
+import numpy as np
 
 
 class FlightDelayFeatureProcessing(object):
@@ -20,9 +21,38 @@ class FlightDelayFeatureProcessing(object):
         df = self.removeDepDelayNew(df)
         df = self.removeDepDel15(df)
         df = self.oneHotEncodingDepartureTimeBlock(df)
+        #df = self.eraseCancelledFlights(df)
         df = self.removeCancelledAndFlights(df)
         df = self.removeElapsedTime(df)
         return self.removeArrivalAttrs(df)
+
+    @staticmethod
+    def eraseRowsWithNulls(df):
+        df_clear = df.copy()
+        for col in df_clear.columns:
+            df_clear = df_clear[df_clear[col].isnull() == False]
+
+        return df_clear
+
+    @staticmethod
+    def getCleanRowsWithoutAnyNulls(df):
+        null_inds = set()
+        for col in df.columns:
+            inds = np.argwhere(df[col].isnull()).flatten()
+            if len(inds) > 0:
+                null_inds |= set(inds)
+
+        return null_inds
+
+    @staticmethod
+    def getAllRowsWithAtLeastOneNull(df):
+        null_inds = set()
+        for col in df.columns:
+            inds = np.argwhere(df[col].isnull()).flatten()
+            if len(inds) > 0:
+                null_inds |= set(inds)
+
+        return null_inds
 
     @staticmethod
     def removeArrivalAttrs(df):
@@ -35,6 +65,10 @@ class FlightDelayFeatureProcessing(object):
         return df.drop(labels=['CRS_ELAPSED_TIME', 'ACTUAL_ELAPSED_TIME'], axis=1)
 
     # .drop(labels=[], axis= 1)
+
+    @staticmethod
+    def eraseCancelledFlights(df):
+        return df.iloc[np.argwhere(df['CANCELLED'] == False).flatten()]
 
     @staticmethod
     def removeCancelledAndFlights(df):
@@ -55,6 +89,10 @@ class FlightDelayFeatureProcessing(object):
     @staticmethod
     def removeCRSDeptTime(df):
         return df.drop(labels=['CRS_DEP_TIME'], axis=1)
+
+    @staticmethod
+    def removeRedundantStateNames(df):
+        return df.drop(labels=['DEST_STATE_NM', 'ORIGIN_STATE_NM'], axis=1)
 
     @staticmethod
     def oneHotEncodingDestState(df):
@@ -91,6 +129,14 @@ class FlightDelayFeatureProcessing(object):
             drop(labels=['AIRLINE_ID'], axis=1)
 
     @staticmethod
+    def removeCarrier(df):
+        return df.drop(labels=['CARRIER'], axis=1)
+
+    @staticmethod
+    def removeIdColsAlreadyRepresentedByStrCols(df):
+        return df.drop(labels=['ORIGIN_AIRPORT_ID', 'AIRLINE_ID', 'DEST_AIRPORT_ID'], axis=1)
+
+    @staticmethod
     def dropYearAndDate(df):
         return df.drop(labels=['YEAR', 'FL_DATE'], axis=1)
 
@@ -101,11 +147,12 @@ class FlightDelayFeatureProcessing(object):
         return df_copy
 
     @staticmethod
-    def createIsDelayedCol(df, random_state=None):
-        non_delayed = df[df['ARR_DELAY_GROUP'] <= 0].copy()
-        delayed = df[df['ARR_DELAY_GROUP'] > 0].copy()
+    def createIsDelayedCol(df, random_state=None, shuffle_it=True):
+        augmented_df = df.copy()
+        augmented_df['IS_DELAYED'] = False  # all as non delayed
+        augmented_df.loc[augmented_df['ARR_DELAY_GROUP'] > 0, 'IS_DELAYED'] = True  # the delayed as delayed
 
-        delayed['IS_DELAYED'] = True
-        non_delayed['IS_DELAYED'] = False
-
-        return shuffle(pd.concat((delayed, non_delayed)), random_state=random_state)
+        if shuffle_it:
+            return shuffle(augmented_df, random_state=random_state)
+        else:
+            return augmented_df

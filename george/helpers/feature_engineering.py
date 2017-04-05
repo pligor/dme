@@ -2,6 +2,16 @@ from datetime import datetime
 import numpy as np
 
 
+def getUniqueValuesPerFeature(df, threshold=150):
+    for column in df:
+        print('\n' + column + ': ')
+        uniques = df[column].unique()
+        if len(uniques) < threshold:
+            print(uniques)
+        else:
+            print('Too large to show')
+
+
 def compareSimilarCategoricalColumns(col_a, col_b):
     ii, a_to_b = getMappingOfSimilarCategoricalColumns(col_a=col_a, col_b=col_b)
     return np.all(col_b == np.array([a_to_b[elem_a] for elem_a in col_a]))
