@@ -3,6 +3,7 @@ import seaborn as sns
 import numpy as np
 from skopt.plots import plot_convergence
 
+
 def plotGPoptFunction(res_gp, figsize=(12, 6)):
     plt.figure(figsize=figsize)
     plt.plot(res_gp.func_vals)
@@ -12,15 +13,17 @@ def plotGPoptFunction(res_gp, figsize=(12, 6)):
     plt.xlim([0, len(res_gp.func_vals)])
     plt.grid()
 
+
 def plotGPoptConvergence(res_gp, figsize=(12, 6)):
     fig = plt.figure(figsize=figsize)
     plot_convergence(res_gp)
     plt.grid()
 
-def plotBothDists(XX, yy, colname, bins=None, alpha=0.3):
-    fig, ax = plt.subplots(figsize=(16, 5))
-    # sns.despine(left=True)
-    # plt.hold(True)
+
+def plotBothDists(XX, yy, colname, bins=None, alpha=0.3, blue_label=None, red_label=None, figsize=(12, 9)):
+    assert (blue_label is None and red_label is None) or (blue_label is not None and red_label is not None)
+
+    fig, ax = plt.subplots(figsize=figsize)
 
     ax.hold(True)
     sns.distplot(XX[yy][colname], kde=True, bins=bins,  # ax=ax,
@@ -31,9 +34,9 @@ def plotBothDists(XX, yy, colname, bins=None, alpha=0.3):
                  )
 
     ax.hold(False)
+    ax.legend(['delayed', 'arrived on time'])
+    ax.grid(True)
     plt.show()
-
-
 
 
 def plotDistsPerClass(XX, yy, colname, true_title='delayed!', false_title='arrived on time', bins=None):
