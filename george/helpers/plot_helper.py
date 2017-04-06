@@ -1,7 +1,21 @@
 from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np
+from skopt.plots import plot_convergence
 
+def plotGPoptFunction(res_gp, figsize=(12, 6)):
+    plt.figure(figsize=figsize)
+    plt.plot(res_gp.func_vals)
+    plt.scatter(range(len(res_gp.func_vals)), res_gp.func_vals)
+    plt.ylabel(r'$f(x)$')
+    plt.xlabel('Number of calls $n$')
+    plt.xlim([0, len(res_gp.func_vals)])
+    plt.grid()
+
+def plotGPoptConvergence(res_gp, figsize=(12, 6)):
+    fig = plt.figure(figsize=figsize)
+    plot_convergence(res_gp)
+    plt.grid()
 
 def plotBothDists(XX, yy, colname, bins=None, alpha=0.3):
     fig, ax = plt.subplots(figsize=(16, 5))

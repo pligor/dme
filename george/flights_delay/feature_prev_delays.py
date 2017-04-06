@@ -16,7 +16,7 @@ class FeaturePrevDelays(object):
     def __init__(self, data_frame, mins_set):
         """#note that having hours and minutes expressed like that, like an integer is not exactly
                 #minutes that we extract but it is ok, we don't care to be exact"""
-        #super(FeaturePrevDelays, self).__init__()
+        # super(FeaturePrevDelays, self).__init__()
         self.df = data_frame.copy()
         self.mins_set = mins_set
 
