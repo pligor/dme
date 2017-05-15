@@ -33,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_one_hot_encoder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="my_one_hot_encoder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers/my_one_hot_encoder.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -72,18 +72,6 @@
               <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="performance_issues.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helpers/performance_issues.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,6 +121,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="feature_holidays.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/flights_delay/feature_holidays.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="60" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -157,6 +157,7 @@
         <option value="$PROJECT_DIR$/flights_delay/feature_airline_delays.py" />
         <option value="$PROJECT_DIR$/flights_delay/feature_prev_delays.py" />
         <option value="$PROJECT_DIR$/helpers/plot_helper.py" />
+        <option value="$PROJECT_DIR$/flights_delay/feature_holidays.py" />
       </list>
     </option>
   </component>
@@ -531,16 +532,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/helpers/plot_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flights_delay/feature_processing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1717">
@@ -903,16 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flights_delay/feature_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flights_delay/feature_airline_delays.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -972,6 +953,26 @@
         <state relative-caret-position="0">
           <caret line="0" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flights_delay/feature_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flights_delay/feature_holidays.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="60" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
